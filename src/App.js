@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Datos from "./Componentes/Datos";
+import {useState} from 'react';
+import Encabezado from "./Componentes/Titulo";
 
 function App() {
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Encabezado titulo="Ingresar Nombre y Contraseña para ingresar" />
+      <Datos
+        name={name} setName={setName}
+        password={password} setPassword={setPassword} />
+    </>
   );
 }
-
 export default App;
